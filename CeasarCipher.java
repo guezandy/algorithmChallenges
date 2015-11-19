@@ -43,33 +43,6 @@ import java.util.regex.*;
 public class CeasarCipher {
 
     public static void main(String[] args) {
-    	Scanner s = new Scanner(System.in);
-
-    	int N = s.nextInt();
-    	String S = s.next(); //next line crashes for some reason
-    	int K = s.nextInt();
-
-    	//System.out.println("N: "+N+" S:" +S+" K:"+K);
-
-    	for(int i = 0; i < N; i++) {
-    		int l = S.charAt(i);
-    		//letter is lowercase of uppercase
-    		if(l >= 65 && l <= 90) {
-    			l = l+K;
-    			if(l > 90) {
-    				l = (l%90)+64;
-    			}
-    		} else if(l >= 97 && l <= 122) {
-    			l = l+K;
-    			if(l > 122) {
-    				l = (l%122) + 96;
-    			}
-    		}
-
-    		System.out.print((char)l);
-    		//System.out.println((char)(S.charAt(i)+1));// = (S.charAt(i) - K);
-    	}
-
-    	//System.out.println("Cipher: "+S);
+            System.out.println("HELLO");
     }
 }

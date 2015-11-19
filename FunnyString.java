@@ -51,24 +51,34 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class FunnyString {
-
+public class Solution {
     public static void main(String[] args) {
-    	Scanner scan = new Scanner(System.in);
-    	int T = scan.nextInt();
-    	T = 1; //TEST
-    	for(int i = 0; i < T; i++) {
-    		String S = scan.next();
-    		String R = new StringBuilder(S).reverse().toString();
-    		System.out.println("S: "+S+" R: "+R);
-    		Boolean x = true;
-    		for(int j = 0; j < S.length(); j++) {
-    			//if charAt j = charAt(j-1%S.length())
-    			System.out.println("S: "+(S.charAt(i) - S.charAt((i-1)%3)));
-    		}
-    	}
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        while(T > 0) {
+            String line = scanner.next();
+            int start = 0;
+            int end = line.length()-1;
+            boolean funny = true;
+            while(start < line.length()-1) {
+                //System.out.print("Compare: "+(start+1)+" : "+line.charAt(start+1));
+                //System.out.print(" and: "+(start)+" : "+line.charAt(start));
+                //System.out.print(" equals: "+Math.abs((line.charAt(start+1) - line.charAt(start))));
+                //System.out.print(" with: "+(end-1)+ " : "+line.charAt(end-1));
+                //System.out.print(" and: "+ end + " : "+ line.charAt(end));
+                //System.out.println(" equals: "+Math.abs((line.charAt(end-1) - line.charAt(end))));
+                if(Math.abs((line.charAt(start+1) - line.charAt(start))) != Math.abs((line.charAt(end-1) - line.charAt(end)))) {
+                    funny = false;
+                }
+                start++;
+                end--;
+            }
+            System.out.println((funny) ? "Funny" : "Not Funny");
+            T--;
+        }
     }
 }
+
 
 
 
